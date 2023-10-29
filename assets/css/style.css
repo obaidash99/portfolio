@@ -366,15 +366,31 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Akills
+# Skills
 --------------------------------------------------------------*/
-.skills .progress {
+.skills-container {
+  display: flex; 
+  flex-wrap: wrap; 
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+/* .skills .progress {
   height: 60px;
   display: block;
   background: none;
-  border-radius: 0;
-}
-.skills .progress .skill {
+  border-radius: 0; 
+} */
+/* .skills .progress .skill {
   padding: 0;
   margin: 0 0 6px 0;
   text-transform: uppercase;
@@ -382,8 +398,8 @@ section {
   font-weight: 600;
   font-family: "Poppins", sans-serif;
   color: #050d18;
-}
-.skills .progress .skill .val {
+} */
+/* .skills .progress .skill .val {
   float: right;
   font-style: normal;
 }
@@ -396,7 +412,7 @@ section {
   height: 10px;
   transition: 0.9s;
   background-color: #149ddd;
-}
+} */
 
 /*--------------------------------------------------------------
 # Resume
@@ -726,10 +742,22 @@ section {
   padding-bottom: 130px;
 }
 .contact .info {
-  padding: 30px;
   background: #fff;
   width: 100%;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.contact .info .email, .contact .info .phone {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.contact .info .email div, .contact .info .phone div {
+  display: flex;
+  flex-direction: column;
 }
 .contact .info i {
   font-size: 20px;
@@ -745,23 +773,14 @@ section {
   transition: all 0.3s ease-in-out;
 }
 .contact .info h4 {
-  padding: 0 0 0 60px;
+  padding-top: 10px;
   font-size: 22px;
   font-weight: 600;
-  margin-bottom: 5px;
   color: #050d18;
 }
 .contact .info p {
-  padding: 0 0 10px 60px;
-  margin-bottom: 20px;
   font-size: 14px;
   color: #173b6c;
-}
-.contact .info .email p {
-  padding-top: 5px;
-}
-.contact .info .social-links {
-  padding-left: 60px;
 }
 .contact .info .social-links a {
   font-size: 18px;
