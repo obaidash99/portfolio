@@ -479,7 +479,7 @@ section {
   margin-bottom: 40px;
 }
 .portfolio .portfolio-item img {
-  width: 50%;
+  width: 100%;
   border: 1px solid #eee;
   border-radius: 0.5rem;
 }
