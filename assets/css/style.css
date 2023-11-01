@@ -496,18 +496,22 @@ section {
   width: 100%;
   align-items: center;
   gap: 15px;
-  /* justify-content: space-evenly; */
+  flex-wrap: wrap;
 }
 .portfolio .portfolio-links a {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 1.5rem;
   border: 1px solid;
   border-radius: 0.5rem;
   padding: 5px 15px;
 }
-/*--------------------------------------------------------------
+
+@media screen and (min-width: 499px) {
+  .portfolio .portfolio-links a {
+    font-size: 1.5rem;
+  }
+}/*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
 .portfolio-details {
