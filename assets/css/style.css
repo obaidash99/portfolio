@@ -474,9 +474,8 @@ section {
 .portfolio .portfolio-item {
   display: flex;
   align-items: start;
-  gap: 50px; 
+  gap: 20px; 
   flex-wrap: wrap;
-  margin-bottom: 40px;
 }
 .portfolio .portfolio-item img {
   width: 100%;
@@ -702,7 +701,9 @@ section {
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: start;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 .contact .info .email, .contact .info .phone {
   display: flex;
