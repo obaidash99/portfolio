@@ -267,3 +267,55 @@
 })();
 
 // Contact Form
+const contactForm = document.querySelector('.contact-form');
+const fullNameInput = document.querySelector('#fullName');
+const emailAddressInput = document.querySelector('#emailAddress');
+const messageInput = document.querySelector('#message');
+
+contactForm.addEventListener('submit', (e) => {
+	e.preventDefault();
+	const emailMessage = getEmailMessage({
+		fullName: fullNameInput.value,
+		emailAddress: emailAddressInput.value,
+		message: messageInput.value,
+	});
+
+	fetch('https://sendmail-api-docs.vercel.app/api/send', {
+		method: 'POST',
+		body: JSON.stringify({
+			to: 'obaidashurbaji99@gmail.com', // replace it with your email address (the email you want to receive messages at)
+			subject: 'Message From Portfolio Contact Form',
+			message: emailMessage,
+		}),
+	})
+		.then((res) => res.json())
+		.then(() => {
+			// Clear form inputs
+			fullNameInput.value = '';
+			emailAddressInput.value = '';
+			messageInput.value = '';
+
+			// Show pop-up notification
+			Swal.fire({
+				title: 'Message Sent!',
+				text: 'We will get back to you soon!',
+				icon: 'success',
+				customClass: {
+					popup: 'success-popup',
+					title: 'success-title',
+					content: 'success-content',
+				},
+			});
+		});
+});
+
+const getEmailMessage = ({ fullName, emailAddress, message } = {}) => {
+	return `
+        <p>You have received a new message from your contact form website:</p>
+        <div style="background-color: #fbfbfb; color: #101010; padding: 12px">
+            <p style="margin: 0;">Full Name: ${fullName}</p>
+            <p style="margin: 12px 0;">Email Address: ${emailAddress}</p>
+            <p style="margin: 0;">Message: ${message}</p>
+        </div>
+    `;
+};
